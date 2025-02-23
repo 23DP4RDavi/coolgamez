@@ -80,40 +80,41 @@ SBUTTON.addEventListener('click', () => {
     if (spinCost > count) {
         alert("Not enough clicks!")
     }
+    else {
+        count -= spinCost
+        CLICKS.innerHTML = count
 
-    count -= spinCost
-    CLICKS.innerHTML = count
+        OUTCOME.innerText = "Spinning..."
+        SLOTNUMBERS.classList.add("spinning")
 
-    OUTCOME.innerText = "Spinning..."
-    SLOTNUMBERS.classList.add("spinning")
+        let interval = setInterval(() => {
+            const num1 = Math.floor(Math.random() * 10)
+            const num2 = Math.floor(Math.random() * 10)
+            const num3 = Math.floor(Math.random() * 10)
+            SLOTNUMBERS.innerText = `|${num1}||${num2}||${num3}|`
+        }, 100)
 
-    let interval = setInterval(() => {
-        const num1 = Math.floor(Math.random() * 10)
-        const num2 = Math.floor(Math.random() * 10)
-        const num3 = Math.floor(Math.random() * 10)
-        SLOTNUMBERS.innerText = `|${num1}||${num2}||${num3}|`
-    }, 100)
+        setTimeout(() => {
+            clearInterval(interval)
+            SLOTNUMBERS.classList.remove("spinning")
 
-    setTimeout(() => {
-        clearInterval(interval)
-        SLOTNUMBERS.classList.remove("spinning")
+            const finalNum1 = Math.floor(Math.random() * 10)
+            const finalNum2 = Math.floor(Math.random() * 10)
+            const finalNum3 = Math.floor(Math.random() * 10)
 
-        const finalNum1 = Math.floor(Math.random() * 10)
-        const finalNum2 = Math.floor(Math.random() * 10)
-        const finalNum3 = Math.floor(Math.random() * 10)
+            SLOTNUMBERS.innerText = `|${finalNum1}||${finalNum2}||${finalNum3}|`
 
-        SLOTNUMBERS.innerText = `|${finalNum1}||${finalNum2}||${finalNum3}|`
-
-        if (finalNum1 === finalNum2 && finalNum2 === finalNum3) {
-            const reward = spinCost * 500
-            count += reward
-            CLICKS.innerHTML = count
-            OUTCOME.innerText = `Jackpot! You won ${reward} clicks!`
-            SLOTNUMBERS.classList.add("jackpot")
-        } else {
-            OUTCOME.innerText = `Try again!`
-        }
+            if (finalNum1 === finalNum2 && finalNum2 === finalNum3) {
+                const reward = spinCost * 500
+                count += reward
+                CLICKS.innerHTML = count
+                OUTCOME.innerText = `Jackpot! You won ${reward} clicks!`
+                SLOTNUMBERS.classList.add("jackpot")
+            } else {
+                OUTCOME.innerText = `Try again!`
+            }
     }, 2000)
+    }
 });
 
 //Call cat facts after the page loads (with out it, everything will go to hell (if it works, dont touch it))
