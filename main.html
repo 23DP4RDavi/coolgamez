@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/main.css">
+    <title>CoolGamez</title>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="https://api.logo.com/api/v2/images?design=lg_YRJCeoEIGh5egdKPAO&format=webp&width=2000&background=transparent&fit=contain&quality=100&u=d64524d8ed3135c9424e70cec5dd895e2e2b8b89f737114ca98d11052709f3cf">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to CoolGamez</h1>
+            <p>We make games for everyone to have fun. Have fun Gaming on CoolGamez</p>
+            <a href="#clicker">Play Now</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="cat">
+                <div>
+                    <h1>Random Cat Fact</h1>
+                    <p id="CatFact">Loading...</p>
+                </div>
+            <img src="https://luckydoggardencity.com/wp-content/uploads/cat_boarding.png">
+        </div>
+
+        <div class="clicker">
+            <img id="cookie" src="https://images.cdn.us-central1.gcp.commercetools.com/4e5a974e-1287-4368-811f-41d06eb6c548/Chocolate%20Chip%20Silo%20-t71xMOs7.png">
+            <div class="description">
+                <h1>Cookie Clicker</h1>
+                <p>By Clicking the cookie, you get clicks. Your goal, is to get as many clicks you can, but you can use those clicks to get upgrads and other things.</p>
+            </div>
+            <div class="clicks">
+                <h2>Clicks</h2>
+                <p id="count">0</p>
+            </div>
+        </div>
+        
+        <div class="upgrades">
+            <h1>Upgrades</h1>
+            <p>Using clicks you can buy upgrades. Upgrades help you get more clicks</p>
+            <button id="multiplier">Upgrade Multiplier to make twice as much for 1 click (Cost: 20 | Bought: 0)</button>
+            <button id="autoclick">Add an automatic clicker (Cost: 50 | Bought: 0)</button>
+        </div>
+
+        <div class="slot">
+            <h1>Slot Machine</h1>
+            <p>Step right up and try your luck! Spin the slot machine and see if you can hit the jackpot! Match all three numbers to win BIG! Will you be the next lucky winner?</p>
+            <br>
+            <p>Set Spin Cost (Clicks):</p>
+            <input type="number" id="spinCost" value="10" min="1">
+            <button id="spinButton">Spin</button>
+        
+            <div id="slotNumbers">|0||0||0|</div>
+            <p id="slotOutcome">Good luck!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CoolGamez. All rights reserved.</p>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Contact</a> 
+            <a href="#">Privacy Policy</a>
+        </nav>
+    </footer>
+
+
+
+</body>
+<script src="src/js/main.js"></script>
+
+</html>
