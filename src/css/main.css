@@ -192,6 +192,11 @@ button, .hero-content a, nav ul li a {
     cursor: pointer;
 }
 
+button:hover, nav ul li a:hover {
+    background-color: darkgreen;
+    color: yellow;
+}
+
 /* Footer */
 footer {
     background-color: black;
@@ -201,4 +206,15 @@ footer {
     margin-top: 50px;
     font-size: 26px;
     font-weight: bold;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: cyan;
 }
